@@ -16,38 +16,61 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: Colors.greenAccent,
+    return Scaffold(
+        backgroundColor: Color.fromARGB(253, 249, 228, 100),
         appBar: AppBar(
-          backgroundColor: Colors.greenAccent,
+          backgroundColor: Color.fromARGB(253, 249, 228, 100),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Icon(Icons.beach_access_rounded,
               size: 50,
+              color: const Color.fromARGB(255, 255, 125, 125),
+              shadows: [
+                  Shadow(
+                    color: Colors.white, // Adjust the outline color as desired
+                    offset: Offset(2.5, 4.0), // Adjust the offset for outline position
+                    blurRadius: 1.5, // Adjust the blur radius for outline thickness
+                  ),
+                ],
               ),
-              Text("Dayzer",
+              Text("Beachify",
               style: TextStyle(
-                fontSize: 25,
+                color: Color.fromARGB(255, 255, 255, 255),
+                fontSize: 28,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w600,
-                letterSpacing: 2
+                letterSpacing: 2,
+                shadows: [
+                  Shadow(
+                    color: Colors.orangeAccent, // Adjust the outline color as desired
+                    offset: Offset(2.5, 4.0), // Adjust the offset for outline position
+                    blurRadius: 1.5, // Adjust the blur radius for outline thickness
+                  ),
+                ],
               ),
               ),
             ],
           ),
         ),
         body: Padding(
-          padding: EdgeInsets.symmetric(vertical: 40, horizontal: 50),
+          padding: EdgeInsets.all(30),
           child: Column(
             children: [
-              Text('To simplify the way you beach',
+              Text('Simplify the way you beach',
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 40,
+                color: Colors.white,
+                fontSize: 44,
                 fontFamily: 'Poppins',
                 fontWeight: FontWeight.w900,
+                shadows: [
+                  Shadow(
+                    color: Colors.orangeAccent, // Adjust the outline color as desired
+                    offset: Offset(3.0, 5.0), // Adjust the offset for outline position
+                    blurRadius: 1.5, // Adjust the blur radius for outline thickness
+                  ),
+                ],
               ),
               ),
               Expanded(
@@ -58,31 +81,42 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               Text('1000+ fun ways to enjoy your stay on the beach',
               style: TextStyle(
-                color: Colors.grey[700],
+                letterSpacing: 1.5,
+                color: Color.fromARGB(255, 255, 125, 125),
                 fontSize: 18,
-                fontFamily: 'Poppins'
+                fontFamily: 'Poppins',
+                shadows: [
+                  Shadow(
+                    color: Colors.white, // Adjust the outline color as desired
+                    offset: Offset(2.5, 4.0), // Adjust the offset for outline position
+                    blurRadius: 1.5, // Adjust the blur radius for outline thickness
+                  ),
+                ],
               ),
               textAlign: TextAlign.center,
               ),
-              Padding(padding: EdgeInsets.symmetric(vertical: 20)),
-              TextButton(
-                onPressed: () {}, 
+              Padding(padding: EdgeInsets.symmetric(vertical: 15)),
+              ElevatedButton(
+                onPressed: () {},
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                  backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),),
                   ),
                   padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.symmetric(horizontal: 60, vertical: 20)),
+                  elevation: MaterialStateProperty.all(8)
                 ),
-                child: Text('Start my free trial', style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 20,
+                child: Text('Start my free trial', 
+                  style: TextStyle(
+                    letterSpacing: 1.5,
+                    color: Color.fromARGB(255, 255, 125, 125),
+                    fontSize: 20,
+                    fontFamily: 'Poppins',
                 ),),
                 )
             ],
           ),
         ),
-      ),
-    );
+      );
   }
 }
